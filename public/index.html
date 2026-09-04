@@ -21,11 +21,16 @@
 :root{
   --ink:#1B2A41;
   --gold:#C8892E;
+  --gold-dk:#8A5B14;
   --celadon:#7A9A8C;
+  --celadon-dk:#4F6D5F;
   --ember:#B4472C;
   --paper:#F5F1E8;
   --sandstone:#E4DED0;
   --stone:#6B6559;
+  --mist:#B9C2CE;
+  --hairline:#2C3B52;
+  --space:72px;
   --serif:"Source Serif 4",Georgia,serif;
   --sans:"Inter",system-ui,-apple-system,sans-serif;
 }
@@ -45,12 +50,22 @@ a{color:inherit}
 .skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:#3A2708;padding:10px 16px}
 .skip:focus{left:12px;top:12px;z-index:20}
 
+/* ---- section heading system: one rule, one scale ---- */
+.path h2,.pricing h2,.about h2,.contact h2{
+  font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);
+  letter-spacing:-.01em;margin:0 0 30px;padding-top:22px;position:relative;
+}
+.path h2::before,.pricing h2::before,.about h2::before,.contact h2::before{
+  content:"";position:absolute;top:0;left:0;width:44px;height:3px;border-radius:2px;background:var(--ember);
+}
+.pricing h2::before,.contact h2::before{background:var(--gold)}
+
 header{background:var(--ink)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;max-width:1080px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.brand span{font-family:var(--serif);font-size:19px;color:var(--paper);letter-spacing:.2px}
-.navlinks{display:flex;gap:30px;font-size:15px}
-.navlinks a{color:#B9C2CE;text-decoration:none}
+.brand span{font-family:var(--serif);font-size:20px;color:var(--paper);letter-spacing:.2px}
+.navlinks{display:flex;gap:30px;font-size:14px}
+.navlinks a{color:var(--mist);text-decoration:none}
 .navlinks a:hover{color:var(--paper)}
 @media (max-width:720px){
   .nav{flex-direction:column;align-items:flex-start;gap:14px;padding:16px 20px}
@@ -59,19 +74,24 @@ header{background:var(--ink)}
   .navlinks a{white-space:nowrap}
 }
 
-.hero{background:var(--ink);padding:48px 0 72px}
+.hero{background:var(--ink);padding:56px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
 .hero-lead{
   font-family:var(--serif);font-size:clamp(28px,5.2vw,46px);line-height:1.28;
   color:var(--paper);margin:0;max-width:22ch;letter-spacing:-.01em;
 }
-.hero-sub{font-size:18px;line-height:1.6;color:#B9C2CE;max-width:48ch;margin:24px 0 6px}
+.hero-sub{font-size:17px;line-height:1.65;color:var(--mist);max-width:48ch;margin:24px 0 6px}
+.hero-mark{position:absolute;right:-30px;top:50%;transform:translateY(-50%);width:360px;height:360px;opacity:.08;pointer-events:none;z-index:0}
+@media (max-width:980px){.hero-mark{display:none}}
+.creds{font-size:14px;line-height:1.65;color:#8A97A8;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--hairline);max-width:56ch}
+.creds strong{color:var(--paper);font-weight:500}
 
 .quote{background:#EFE9DC;border-left:4px solid var(--ember)}
 .quote .wrap{padding-top:34px;padding-bottom:34px}
-.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,25px);line-height:1.5;max-width:36ch}
-.quote cite{display:block;margin-top:14px;font-family:var(--sans);font-style:normal;font-size:14px;color:var(--stone)}
+.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,24px);line-height:1.5;max-width:36ch}
+.quote cite{display:block;margin-top:14px;font-family:var(--sans);font-style:normal;font-size:14px;color:#5C5749}
 
-.lead{padding:64px 0}
+.lead{padding:var(--space) 0}
 .lead p{color:#3C4553;margin:0 0 22px;max-width:66ch}
 .lead p:last-of-type{margin-bottom:0}
 .pathlink{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:1px}
@@ -83,53 +103,59 @@ header{background:var(--ink)}
   transition:background .15s ease;
 }
 .cta:hover{background:#B27A24}
-.after-cta{font-size:15px;color:var(--stone);max-width:60ch}
+.after-cta{font-size:14px;color:var(--stone);max-width:60ch}
 
-.path{background:var(--sandstone);padding:72px 0}
-.path h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 34px;letter-spacing:-.01em}
+.path{background:var(--sandstone);padding:var(--space) 0}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media (max-width:860px){.steps{grid-template-columns:1fr;gap:16px}}
-.step{background:#fff;border:1px solid #D9D2C2;border-radius:10px;padding:26px 24px}
-.step.final{border-top:4px solid var(--gold)}
-.step h3{font-family:var(--serif);font-weight:500;font-size:21px;margin:0 0 4px}
-.step .num{font-family:var(--serif);font-size:15px;color:var(--celadon);display:block;margin-bottom:10px}
-.step.final .num{color:var(--gold)}
+.step{background:#fff;border:1px solid #D9D2C2;border-radius:10px;padding:26px 24px;position:relative;overflow:hidden}
+/* accent sits inside the box, so all three cards align on the same baseline */
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--celadon)}
+.step:nth-child(2)::before{background:var(--ember)}
+.step:nth-child(3)::before{background:var(--gold)}
+.step h3{font-family:var(--serif);font-weight:500;font-size:20px;margin:0 0 4px}
+.step .num{
+  font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;display:block;margin-bottom:10px;color:var(--celadon-dk);
+}
+.step:nth-child(2) .num{color:var(--ember)}
+.step:nth-child(3) .num{color:var(--gold-dk)}
 .step ul{margin:16px 0 0;padding:0;list-style:none}
-.step li{font-size:15px;line-height:1.6;color:var(--stone);padding:0 0 12px 18px;position:relative}
+.step li{font-size:14px;line-height:1.65;color:var(--stone);padding:0 0 12px 18px;position:relative}
 .step li:last-child{padding-bottom:0}
-.step li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--celadon)}
-.step.final li::before{background:var(--gold)}
+.step li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--celadon)}
+.step:nth-child(2) li::before{background:var(--ember)}
+.step:nth-child(3) li::before{background:var(--gold)}
 
-.pricing{background:var(--celadon);color:#1A2E25;padding:68px 0}
-.pricing h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 18px}
-.amount{font-family:var(--serif);font-size:clamp(40px,7vw,60px);line-height:1;margin:0}
-.amount-note{font-size:17px;color:#233C31;margin:10px 0 0}
-.pricing hr{border:0;border-top:1px solid #5F8071;margin:26px 0 20px}
+/* pricing carries the weight of the page, so it takes the ink treatment */
+.pricing{background:var(--ink);color:var(--paper);padding:var(--space) 0}
+.amount{font-family:var(--serif);font-size:clamp(40px,7vw,60px);line-height:1;margin:0;color:var(--gold)}
+.amount-note{font-size:17px;color:var(--mist);margin:10px 0 0}
+.pricing hr{border:0;border-top:1px solid var(--hairline);margin:26px 0 20px}
 .pricing ul{margin:0;padding:0;list-style:none;max-width:52ch}
-.pricing li{font-size:17px;padding:0 0 12px 26px;position:relative}
-.pricing li::before{content:"";position:absolute;left:0;top:11px;width:11px;height:2px;background:#1A2E25}
-.pricing .note{font-size:15px;color:#233C31;margin:20px 0 0;max-width:52ch}
+.pricing li{font-size:17px;padding:0 0 12px 20px;position:relative}
+.pricing li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.pricing .note{font-size:14px;color:var(--mist);margin:20px 0 0;max-width:52ch}
 
-.about{padding:72px 0}
-.about h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 30px}
+.about{padding:var(--space) 0}
 .aboutgrid{display:grid;grid-template-columns:230px 1fr;gap:32px;align-items:start}
 @media (max-width:720px){.aboutgrid{grid-template-columns:1fr;gap:24px}}
 .portrait{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--sandstone);border-radius:8px}
 @media (max-width:720px){.portrait{max-width:200px}}
-.about p{color:var(--stone);margin:0 0 20px;max-width:62ch}
+.about p{color:#5C5749;margin:0 0 20px;max-width:62ch}
 .about p:last-child{margin-bottom:0}
+.signature{display:block;height:56px;width:auto;margin:22px 0 0;opacity:.85}
 
-.contact{background:var(--ink);color:var(--paper);padding:76px 0 40px}
-.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 14px}
-.contact p{color:#B9C2CE;margin:0 0 28px;max-width:46ch}
-.contact .alt{font-size:15px;margin:18px 0 0}
-.contact .alt a{color:#B9C2CE}
+.contact{background:var(--ink);color:var(--paper);padding:var(--space) 0 40px}
+.contact p{color:var(--mist);margin:0 0 28px;max-width:46ch}
+.contact .alt{font-size:14px;margin:18px 0 0}
+.contact .alt a{color:var(--mist)}
 .ghost{
   display:inline-block;border:1px solid var(--gold);color:var(--gold);text-decoration:none;
   font-size:17px;padding:14px 32px;border-radius:5px;transition:background .15s ease,color .15s ease;
 }
 .ghost:hover{background:var(--gold);color:#3A2708}
-.foot{border-top:1px solid #2C3B52;margin-top:56px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#8A97A8}
+.foot{border-top:1px solid var(--hairline);margin-top:56px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#8A97A8}
 </style>
 </head>
 <body>
@@ -138,11 +164,9 @@ header{background:var(--ink)}
 <header>
   <nav class="nav">
     <a class="brand" href="#top">
-      <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-        <circle cx="50" cy="46" r="30" fill="none" stroke="#F5F1E8" stroke-width="5" stroke-linecap="round" stroke-dasharray="165 24" stroke-dashoffset="-147"/>
-        <path d="M50 44 C56 55 58 65 50 72 C42 65 44 55 50 44 Z" fill="#F5F1E8" transform="rotate(-44 50 72)"/>
-        <path d="M50 44 C56 55 58 65 50 72 C42 65 44 55 50 44 Z" fill="#F5F1E8" transform="rotate(44 50 72)"/>
-        <path d="M50 32 C58 45 61 60 50 72 C39 60 42 45 50 32 Z" fill="#C8892E"/>
+      <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <path d="M73.7 30.1 A31 31 0 1 1 26.3 30.1" fill="none" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/>
+        <path d="M50 20 C66 42 68 62 50 78 C32 62 34 42 50 20 Z" fill="#C8892E"/>
       </svg>
       <span>Business Bodhisattva</span>
     </a>
@@ -162,7 +186,12 @@ header{background:var(--ink)}
     <p class="hero-lead">If working with people in crisis has taught me one thing, it's that you should never let crisis go to waste.</p>
     <p class="hero-sub">A crisis professional's approach to 1:1 life coaching for when life isn't going according to plan.</p>
     <a class="cta" href="https://calendly.com/drakebaglietto/60min" target="_blank" rel="noopener">Book a free intro call</a>
+    <p class="creds">Strategic communications for the <strong>Sundance Film Festival</strong> · Media training for <strong>Fortune 500</strong> and major nonprofit CEOs</p>
   </div>
+  <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+    <path d="M73.7 30.1 A31 31 0 1 1 26.3 30.1" fill="none" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round"/>
+    <path d="M50 20 C66 42 68 62 50 78 C32 62 34 42 50 20 Z" fill="#C8892E"/>
+  </svg>
 </section>
 
 
@@ -207,7 +236,7 @@ header{background:var(--ink)}
           <li>Apply right practice, right attitude, and right understanding</li>
         </ul>
       </article>
-      <article class="step final">
+      <article class="step">
         <span class="num">Part three</span>
         <h3>Self Actualization</h3>
         <ul>
@@ -245,6 +274,7 @@ header{background:var(--ink)}
       <div>
         <p>With a diverse background in crisis communications, public affairs, and media training, Drake has used his unique experience to help clients simplify complexity through creativity.</p>
         <p>His non-traditional path, down which a love of strategy propelled him, has included leading strategic communications for the Sundance Film Festival and media training Fortune 500 and major nonprofit CEOs.</p>
+        <img class="signature" src="/signature.png" width="628" height="170" loading="lazy" decoding="async" alt="Drake Baglietto">
       </div>
     </div>
   </div>
