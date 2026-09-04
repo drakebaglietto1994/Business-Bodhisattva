@@ -1,0 +1,4 @@
+# Cloudflare Pages project config (used by `wrangler pages deploy`).
+name = "business-bodhisattva"
+compatibility_date = "2025-09-04"
+pages_build_output_dir = "public"
