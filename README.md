@@ -36,7 +36,9 @@ python3 -m http.server 8000 --directory public
    - **Build output directory:** `public`
    - **Root directory:** *(leave empty)*
 4. **Save and Deploy.** The site goes live at `https://<project>.pages.dev` in about a minute.
-5. Set the **Production branch** under *Settings → Builds & deployments* to whichever branch you want live (`main` once this work is merged). Every push to it redeploys; other branches get preview URLs.
+5. Check the **Production branch** under *Settings → Builds & deployments*. It currently needs to be `claude/business-bodhisattva-launch-4evpzv`, which is this repository's default branch. Every push to it redeploys; other branches get preview URLs instead.
+
+> To use a cleaner name, rename the branch on GitHub first (*Settings → Branches → rename to `main`*), then point Cloudflare's production branch at `main`.
 
 ### Option B — Wrangler CLI (one-off deploy)
 
