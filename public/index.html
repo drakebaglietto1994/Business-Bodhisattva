@@ -38,7 +38,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-.narrow{max-width:660px}
+.narrow{max-width:680px;margin-left:auto;margin-right:auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
@@ -52,13 +52,19 @@ header{background:var(--ink)}
 .navlinks{display:flex;gap:30px;font-size:15px}
 .navlinks a{color:#B9C2CE;text-decoration:none}
 .navlinks a:hover{color:var(--paper)}
-@media (max-width:720px){.navlinks{display:none}}
-
-.hero{background:var(--ink);padding:44px 0 84px}
-.hero p{
-  font-family:var(--serif);font-size:clamp(28px,5.2vw,46px);line-height:1.28;
-  color:var(--paper);margin:0;max-width:20ch;letter-spacing:-.01em;
+@media (max-width:720px){
+  .nav{flex-direction:column;align-items:flex-start;gap:14px;padding:16px 20px}
+  .navlinks{gap:20px;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{white-space:nowrap}
 }
+
+.hero{background:var(--ink);padding:48px 0 72px}
+.hero-lead{
+  font-family:var(--serif);font-size:clamp(28px,5.2vw,46px);line-height:1.28;
+  color:var(--paper);margin:0;max-width:22ch;letter-spacing:-.01em;
+}
+.hero-sub{font-size:18px;line-height:1.6;color:#B9C2CE;max-width:48ch;margin:24px 0 6px}
 
 .quote{background:#EFE9DC;border-left:4px solid var(--ember)}
 .quote .wrap{padding-top:34px;padding-bottom:34px}
@@ -84,7 +90,7 @@ header{background:var(--ink)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media (max-width:860px){.steps{grid-template-columns:1fr;gap:16px}}
 .step{background:#fff;border:1px solid #D9D2C2;border-radius:10px;padding:26px 24px}
-.step.final{border-radius:0;border-top:4px solid var(--gold)}
+.step.final{border-top:4px solid var(--gold)}
 .step h3{font-family:var(--serif);font-weight:500;font-size:21px;margin:0 0 4px}
 .step .num{font-family:var(--serif);font-size:15px;color:var(--celadon);display:block;margin-bottom:10px}
 .step.final .num{color:var(--gold)}
@@ -97,7 +103,7 @@ header{background:var(--ink)}
 .pricing{background:var(--celadon);color:#1A2E25;padding:68px 0}
 .pricing h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 18px}
 .amount{font-family:var(--serif);font-size:clamp(40px,7vw,60px);line-height:1;margin:0}
-.amount small{font-family:var(--sans);font-size:17px;font-weight:400;color:#233C31;margin-left:8px}
+.amount-note{font-size:17px;color:#233C31;margin:10px 0 0}
 .pricing hr{border:0;border-top:1px solid #5F8071;margin:26px 0 20px}
 .pricing ul{margin:0;padding:0;list-style:none;max-width:52ch}
 .pricing li{font-size:17px;padding:0 0 12px 26px;position:relative}
@@ -105,16 +111,18 @@ header{background:var(--ink)}
 
 .about{padding:72px 0}
 .about h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 30px}
-.aboutgrid{display:grid;grid-template-columns:200px 1fr;gap:38px;align-items:start}
+.aboutgrid{display:grid;grid-template-columns:230px 1fr;gap:32px;align-items:start}
 @media (max-width:720px){.aboutgrid{grid-template-columns:1fr;gap:24px}}
-.portrait{aspect-ratio:4/5;background:var(--sandstone);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#A39C8C;font-size:14px}
-@media (max-width:720px){.portrait{max-width:170px}}
+.portrait{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--sandstone);border-radius:8px}
+@media (max-width:720px){.portrait{max-width:200px}}
 .about p{color:var(--stone);margin:0 0 20px;max-width:62ch}
 .about p:last-child{margin-bottom:0}
 
 .contact{background:var(--ink);color:var(--paper);padding:76px 0 40px}
 .contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,34px);margin:0 0 14px}
 .contact p{color:#B9C2CE;margin:0 0 28px;max-width:46ch}
+.contact .alt{font-size:15px;margin:18px 0 0}
+.contact .alt a{color:#B9C2CE}
 .ghost{
   display:inline-block;border:1px solid var(--gold);color:var(--gold);text-decoration:none;
   font-size:17px;padding:14px 32px;border-radius:5px;transition:background .15s ease,color .15s ease;
@@ -149,25 +157,28 @@ header{background:var(--ink)}
 <main id="main">
 
 <section class="hero" id="top">
-  <div class="wrap">
-    <p>If working with people in crisis has taught me one thing, it's that you should never let crisis go to waste.</p>
+  <div class="wrap narrow">
+    <p class="hero-lead">If working with people in crisis has taught me one thing, it's that you should never let crisis go to waste.</p>
+    <p class="hero-sub">1:1 life coaching for people whose plans have stopped working — bringing a crisis professional's approach to your challenges.</p>
+    <a class="cta" href="https://calendly.com/drakebaglietto/60min" target="_blank" rel="noopener">Book a free intro call</a>
+  </div>
+</section>
+
+
+<section class="lead">
+  <div class="wrap narrow">
+    <p>After leading strategy and crisis communications efforts for prominent for-profit and nonprofit organizations, I've developed a life coaching method designed to give you the same tools I use to solve my clients' problems, so that you can make the most of this challenging moment.</p>
+    <p>Organizations and people can feel as though they are existing in a state of crisis — when things are not going according to plan — either because they failed to make a plan to start with, or adjust as needed to accommodate conditions on the ground.</p>
+    <p>If it feels like things aren't going to plan and you'd like to tackle your life challenges with a crisis professional's approach, set up a free introductory call where we'll discuss your current challenges and identify which step of the <a class="pathlink" href="#path">Business Bodhisattva Path</a> would be most helpful to you.</p>
+    <a class="cta" href="https://calendly.com/drakebaglietto/60min" target="_blank" rel="noopener">Book a free intro call</a>
+    <p class="after-cta">You'll leave with some recommended reading material and the opportunity to schedule ongoing 1:1 life coaching sessions to help you put these lessons into practice and make the most out of your crisis.</p>
   </div>
 </section>
 
 <section class="quote">
-  <div class="wrap">
+  <div class="wrap narrow">
     <blockquote>Every adversity carries with it the seed of an equivalent or greater benefit.</blockquote>
     <cite>Napoleon Hill</cite>
-  </div>
-</section>
-
-<section class="lead">
-  <div class="wrap narrow">
-    <p>Organizations and people can feel as though they are existing in a state of crisis — when things are not going according to plan — either because they failed to make a plan to start with, or adjust as needed to accommodate conditions on the ground.</p>
-    <p>After leading strategy and crisis communications efforts for prominent for-profit and nonprofit organizations, I've developed a life coaching method designed to give you the same tools I use to solve my clients' problems, so that you can make the most of this challenging moment.</p>
-    <p>If it feels like things aren't going to plan and you'd like to tackle your life challenges with a crisis professional's approach, set up a free introductory call where we'll discuss your current challenges and identify which step of the <a class="pathlink" href="#path">Business Bodhisattva Path</a> would be most helpful to you.</p>
-    <a class="cta" href="#contact">Book a free intro call</a>
-    <p class="after-cta">You'll leave with some recommended reading material and the opportunity to schedule ongoing 1:1 life coaching sessions to help you put these lessons into practice and make the most out of your crisis.</p>
   </div>
 </section>
 
@@ -210,9 +221,10 @@ header{background:var(--ink)}
 </section>
 
 <section class="pricing" id="pricing">
-  <div class="wrap">
+  <div class="wrap narrow">
     <h2>Pricing</h2>
-    <p class="amount">$200<small>monthly retainer includes:</small></p>
+    <p class="amount">$200</p>
+    <p class="amount-note">monthly retainer includes:</p>
     <hr>
     <ul>
       <li>4 one hour weekly check ins to discuss reading material</li>
@@ -222,10 +234,11 @@ header{background:var(--ink)}
 </section>
 
 <section class="about" id="about">
-  <div class="wrap">
+  <div class="wrap narrow">
     <h2>About</h2>
     <div class="aboutgrid">
-      <div class="portrait">Portrait</div>
+      <img class="portrait" src="/portrait.jpg" width="900" height="1125" loading="lazy" decoding="async"
+             alt="Drake outside the Boulder Theater, its marquee reading Welcome Sundance Film Festival">
       <div>
         <p>With a diverse background in crisis communications, public affairs, and media training, Drake has used his unique experience to help clients simplify complexity through creativity.</p>
         <p>His non-traditional path, down which a love of strategy propelled him, has included leading strategic communications for the Sundance Film Festival and media training Fortune 500 and major nonprofit CEOs.</p>
@@ -235,10 +248,11 @@ header{background:var(--ink)}
 </section>
 
 <section class="contact" id="contact">
-  <div class="wrap">
+  <div class="wrap narrow">
     <h2>Contact</h2>
     <p>Tackle your life challenges with a crisis professional's approach.</p>
-    <a class="ghost" href="mailto:hello@businessbodhisattva.com">Schedule your intro call</a>
+    <a class="ghost" href="https://calendly.com/drakebaglietto/60min" target="_blank" rel="noopener">Schedule your intro call</a>
+    <p class="alt">Prefer email? <a href="mailto:hello@businessbodhisattva.com">hello@businessbodhisattva.com</a></p>
     <div class="foot">
       <span>Business Bodhisattva</span>
       <span>Never Let A Crisis Go To Waste</span>
