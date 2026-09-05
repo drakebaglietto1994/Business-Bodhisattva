@@ -154,17 +154,10 @@ p{margin:0}
 /* ---------- 6 · about — on cream, where skin tone doesn't fight navy ---------- */
 .about{padding:clamp(70px,8vw,112px) 0}
 .abt{align-items:start}
-.abt>.figure{grid-column:1/5}
-.abt>.who{grid-column:6/12}
-.figure{margin:0}
-@media (max-width:900px){.figure{max-width:300px}}
-.portrait{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--paper-2)}
-.figure figcaption{font-family:var(--text);font-style:italic;font-size:15px;
-                   color:var(--quiet-l);margin-top:11px}
+.abt>.who{grid-column:1/9}
 .about h2{font-size:clamp(30px,3.6vw,48px);margin:-.12em 0 22px;line-height:1.02}
 .about p{max-width:56ch}
 .about p+p{margin-top:19px}
-.signature{height:54px;width:auto;margin:28px 0 0}
 
 /* ---------- 7 · pricing — one composed unit ---------- */
 .pricing{background:var(--ink-2);color:var(--body-d);padding:clamp(70px,8vw,112px) 0}
@@ -309,16 +302,10 @@ p{margin:0}
 <section class="about" id="about">
   <div class="col">
     <div class="abt g">
-      <figure class="figure">
-        <img class="portrait" src="/portrait.jpg" width="1000" height="1250" loading="lazy" decoding="async"
-             alt="Drake Baglietto">
-        <figcaption>Drake Baglietto</figcaption>
-      </figure>
       <div class="who">
         <h2>Who you’d be<br>working with</h2>
         <p>With a diverse background in crisis communications, public affairs, and media training, Drake has used his unique experience to help clients simplify complexity through creativity. His non-traditional path, down which a love of strategy propelled him, has included leading strategic communications for a major film festival and media training Fortune 500 and major nonprofit CEOs.</p>
         <p>After working with leaders of prominent for-profit and nonprofit organizations in moments of crisis, he developed the Business Bodhisattva Path — a life coaching curriculum designed to take advantage of crisis moments to make the structural changes necessary to set individuals and organizations up for future success.</p>
-        <img class="signature" src="/signature.png" width="628" height="170" loading="lazy" decoding="async" alt="">
       </div>
     </div>
   </div>
