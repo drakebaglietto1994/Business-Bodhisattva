@@ -7,13 +7,20 @@
 <meta name="description" content="A crisis professional’s approach to 1:1 career coaching for when life isn’t going according to plan. Free introductory call.">
 <link rel="canonical" href="https://businessbodhisattva.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/business-bodhisattva-mark.svg" color="#1B2A41">
 <meta name="theme-color" content="#1B2A41">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Business Bodhisattva">
 <meta property="og:title" content="Business Bodhisattva — Never Let A Crisis Go To Waste">
 <meta property="og:description" content="A crisis professional’s approach to 1:1 career coaching for when life isn’t going according to plan.">
 <meta property="og:url" content="https://businessbodhisattva.com/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://businessbodhisattva.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Business Bodhisattva — Never Let A Crisis Go To Waste">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://businessbodhisattva.com/og-image.png">
 <style>
 @font-face{font-family:Bask;src:url(/fonts/bask.woff) format("woff");font-weight:400;font-display:swap}
 @font-face{font-family:Cal;src:url(/fonts/cal.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
@@ -76,7 +83,9 @@ p{margin:0}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;
      max-width:var(--col);margin:0 auto;padding:26px var(--gut)}
 .brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.brand svg{width:40px;height:40px;flex:none;display:block}
 .brand span{font-family:var(--disp);font-size:22px;color:var(--paper);letter-spacing:-.012em;position:relative;top:1px}
+@media (max-width:760px){.brand svg{width:34px;height:34px}.brand span{font-size:20px}}
 .navlinks{display:flex;gap:28px}
 .navlinks a{color:#A7B3C4;text-decoration:none}
 .navlinks a:hover{color:var(--paper)}
@@ -187,7 +196,8 @@ p{margin:0}
       display:flex;justify-content:flex-start;gap:14px;flex-wrap:wrap;align-items:baseline;
       color:var(--quiet-d);font-family:var(--text);font-style:italic;font-size:15px}
 .foot .mark{font-family:var(--disp);font-style:normal;font-size:19px;color:var(--body-d);
-            letter-spacing:-.012em}
+            letter-spacing:-.012em;display:inline-flex;align-items:center;gap:10px}
+.foot .mark img{width:24px;height:24px;flex:none;opacity:.92}
 .foot a{text-decoration:none;border-bottom:1px solid var(--gold-lt);padding-bottom:2px}
 .foot a:hover{border-bottom-color:var(--quiet-d)}
 </style>
@@ -198,11 +208,13 @@ p{margin:0}
 <header class="dark">
   <nav class="nav">
     <a class="brand" href="#top">
-      <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-        <circle cx="50" cy="46" r="30" fill="none" stroke="#F5F1E8" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="165 24" stroke-dashoffset="-147"/>
-        <path d="M50 44 C56 55 58 65 50 72 C42 65 44 55 50 44 Z" fill="#F5F1E8" transform="rotate(-44 50 72)"/>
-        <path d="M50 44 C56 55 58 65 50 72 C42 65 44 55 50 44 Z" fill="#F5F1E8" transform="rotate(44 50 72)"/>
-        <path d="M50 32 C58 45 61 60 50 72 C39 60 42 45 50 32 Z" fill="#D9A24E"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 18 196 196" width="40" height="40" aria-hidden="true" focusable="false">
+
+      <path d="M 120.00 158.00 C 90.00 155.00, 65.00 142.00, 76.00 118.00 C 92.00 131.00, 105.00 151.00, 120.00 158.00 Z" fill="#F5F1E8"/>
+      <path d="M 120.00 158.00 C 152.00 154.00, 178.00 140.00, 166.00 114.00 C 148.00 128.00, 136.00 150.00, 120.00 158.00 Z" fill="#F5F1E8"/>
+      <path d="M 116.00 56.00 C 146.00 86.00, 136.00 111.00, 120.00 161.00 C 97.00 107.00, 92.00 94.00, 116.00 56.00 Z" fill="#D89A3E"/>
+      <path d="M 118.00 66.00 C 124.00 116.00, 118.00 91.00, 119.00 155.00" fill="none" stroke="#00000022" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+      <path d="M 143.81 204.87 L 140.36 205.72 L 136.88 206.44 L 133.37 207.02 L 129.84 207.47 L 126.30 207.78 L 122.75 207.96 L 119.20 208.00 L 115.64 207.90 L 112.10 207.66 L 108.56 207.29 L 105.04 206.78 L 101.55 206.13 L 98.08 205.35 L 94.64 204.44 L 91.24 203.39 L 87.89 202.21 L 84.58 200.91 L 81.33 199.48 L 78.13 197.92 L 75.00 196.24 L 71.93 194.44 L 68.94 192.53 L 66.02 190.50 L 63.18 188.36 L 60.43 186.11 L 57.76 183.75 L 55.19 181.30 L 52.72 178.74 L 50.34 176.10 L 48.07 173.36 L 45.91 170.54 L 43.86 167.64 L 41.92 164.66 L 40.10 161.60 L 38.40 158.48 L 36.81 155.30 L 35.36 152.05 L 34.03 148.76 L 32.83 145.41 L 31.76 142.02 L 30.82 138.59 L 30.01 135.13 L 29.34 131.64 L 28.80 128.12 L 28.40 124.59 L 28.14 121.04 L 28.01 117.49 L 28.02 113.94 L 28.17 110.38 L 28.46 106.84 L 28.88 103.31 L 29.44 99.80 L 30.13 96.31 L 30.96 92.85 L 31.92 89.43 L 33.01 86.05 L 34.23 82.71 L 35.58 79.42 L 37.06 76.19 L 38.66 73.01 L 40.38 69.90 L 42.22 66.86 L 44.18 63.89 L 46.25 61.00 L 48.43 58.19 L 50.72 55.47 L 53.11 52.84 L 55.60 50.30 L 58.18 47.86 L 60.86 45.52 L 63.63 43.29 L 66.48 41.17 L 69.41 39.16 L 72.42 37.26 L 75.50 35.48 L 78.64 33.82 L 81.85 32.28 L 85.11 30.87 L 88.43 29.59 L 91.79 28.43 L 95.19 27.41 L 98.63 26.52 L 102.11 25.76 L 105.61 25.13 L 109.13 24.64 L 112.67 24.29 L 116.22 24.08 L 119.77 24.00 L 123.33 24.06 L 126.88 24.26 L 130.41 24.59 L 133.94 25.06 L 137.44 25.67 L 140.92 26.41 L 144.36 27.28 L 147.77 28.29 L 151.14 29.43 L 154.46 30.70 L 157.73 32.09 L 160.95 33.61 L 164.10 35.26 L 167.19 37.02 L 170.20 38.90 L 173.14 40.90 L 176.01 43.01 L 178.78 45.23 L 181.47 47.55 L 184.07 49.98 L 186.58 52.51 L 188.98 55.12 L 191.28 57.84 L 193.47 60.63 L 195.56 63.51 L 197.53 66.47 L 199.39 69.50 L 201.12 72.61 L 202.74 75.77 L 204.23 79.00 L 205.60 82.28 L 206.84 85.61 L 207.95 88.99 L 208.92 92.41 L 209.77 95.86 L 210.48 99.35 L 211.06 102.86 L 211.50 106.38 L 211.80 109.93 L 211.97 113.48 L 211.99 117.03 L 211.89 120.59 L 211.64 124.13 L 211.26 127.67 L 210.74 131.18 L 210.08 134.68 L 209.29 138.15 L 208.37 141.58 L 207.32 144.97 L 206.13 148.33 L 204.82 151.63 L 203.38 154.88 L 200.66 153.61 L 201.85 150.38 L 202.92 147.12 L 203.85 143.82 L 204.66 140.50 L 205.34 137.16 L 205.89 133.81 L 206.31 130.44 L 206.60 127.07 L 206.76 123.70 L 206.79 120.33 L 206.69 116.97 L 206.46 113.63 L 206.11 110.30 L 205.63 107.00 L 205.03 103.73 L 204.30 100.48 L 203.46 97.28 L 202.49 94.12 L 201.41 91.00 L 200.21 87.94 L 198.89 84.92 L 197.47 81.97 L 195.93 79.08 L 194.30 76.26 L 192.55 73.51 L 190.71 70.83 L 188.77 68.23 L 186.74 65.71 L 184.62 63.27 L 182.41 60.92 L 180.12 58.67 L 177.74 56.50 L 175.29 54.44 L 172.77 52.47 L 170.18 50.60 L 167.53 48.84 L 164.82 47.18 L 162.05 45.63 L 159.22 44.19 L 156.35 42.86 L 153.44 41.64 L 150.49 40.54 L 147.50 39.55 L 144.48 38.68 L 141.44 37.93 L 138.38 37.29 L 135.30 36.77 L 132.21 36.37 L 129.10 36.09 L 126.00 35.93 L 122.90 35.88 L 119.80 35.96 L 116.71 36.15 L 113.64 36.46 L 110.59 36.89 L 107.56 37.43 L 104.55 38.08 L 101.58 38.85 L 98.64 39.73 L 95.75 40.72 L 92.90 41.82 L 90.09 43.03 L 87.34 44.33 L 84.64 45.74 L 82.01 47.25 L 79.43 48.86 L 76.92 50.56 L 74.49 52.36 L 72.12 54.24 L 69.83 56.21 L 67.62 58.27 L 65.50 60.40 L 63.46 62.61 L 61.50 64.89 L 59.64 67.25 L 57.87 69.67 L 56.20 72.15 L 54.62 74.69 L 53.15 77.29 L 51.77 79.94 L 50.50 82.64 L 49.33 85.38 L 48.27 88.16 L 47.32 90.98 L 46.48 93.82 L 45.75 96.70 L 45.12 99.60 L 44.61 102.51 L 44.21 105.45 L 43.93 108.39 L 43.75 111.34 L 43.69 114.29 L 43.74 117.24 L 43.90 120.18 L 44.18 123.11 L 44.57 126.03 L 45.06 128.92 L 45.67 131.80 L 46.39 134.65 L 47.21 137.46 L 48.14 140.24 L 49.17 142.99 L 50.31 145.68 L 51.55 148.34 L 52.89 150.94 L 54.32 153.48 L 55.85 155.97 L 57.48 158.40 L 59.19 160.76 L 60.99 163.06 L 62.88 165.28 L 64.85 167.43 L 66.90 169.50 L 69.03 171.49 L 71.23 173.39 L 73.50 175.21 L 75.84 176.94 L 78.24 178.58 L 80.70 180.13 L 83.22 181.58 L 85.79 182.94 L 88.41 184.19 L 91.07 185.34 L 93.78 186.39 L 96.52 187.34 L 99.30 188.18 L 102.11 188.91 L 104.94 189.54 L 107.80 190.05 L 110.67 190.46 L 113.55 190.76 L 116.45 190.94 L 119.35 191.02 L 122.24 190.98 L 125.14 190.83 L 128.03 190.57 L 130.90 190.21 L 133.76 189.73 L 136.60 189.14 L 139.41 188.44 Z" fill="#F5F1E8"/>
       </svg>
       <span>Business Bodhisattva</span>
     </a>
@@ -336,7 +348,10 @@ p{margin:0}
   </div>
   <div class="col">
     <div class="foot">
-      <span class="mark">Business Bodhisattva</span>
+      <span class="mark">
+        <img src="/business-bodhisattva-mark-reversed.svg" width="24" height="24" alt="" loading="lazy" decoding="async">
+        Business Bodhisattva
+      </span>
     </div>
   </div>
 </section>
